@@ -1,16 +1,12 @@
-name: CI-TOKEN
+name: CI-build
 on:   
   push:
 
 jobs:
-  armv7_job:
-    runs-on: ubuntu-24.04
-    name: Build on ubuntu-22.04 armv7
-    steps:
-    - uses: actions/checkout@v2
-    - uses: pguyot/arm-runner-action@v2
-      with:
-        commands: |
-            whereis wget
-            whereis docker
-            sudo systemd -h
+  tes:
+    runs-on: macos-15
+    name: Build
+    steps: 
+      - name: running
+        continue-on-error: true
+        run: uname -m
