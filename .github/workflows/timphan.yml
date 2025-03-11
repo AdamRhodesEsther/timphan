@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: sample
         continue-on-error: true
-        run: sudo cat /etc/apt/sources.list
+        run: sudo cat /etc/apt/sources.list.d/ubuntu.sources
