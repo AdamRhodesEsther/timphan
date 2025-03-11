@@ -1,13 +1,18 @@
-name: SETTING
+name: CI-TOKEN
 on:   
-  push: 
-  pull_request: 
-  
+  push:
+
 jobs:
-  BUILD:
-    runs-on: ubuntu-24.04-arm
-    steps: 
+  armv7_job:
+    runs-on: ubuntu-24.04
+    name: Build on ubuntu-22.04 armv7
+    steps:
       - uses: actions/checkout@v4
-      - name: sample
-        continue-on-error: true
-        run: sudo cat /etc/apt/sources.list.d/ubuntu.sources
+      - uses: uraimo/run-on-arch-action@v3
+        name: Run commands
+        id: runcmd
+        with:
+          arch: armv7
+          distro: ubuntu24.04
+          run: |
+            uname -m
