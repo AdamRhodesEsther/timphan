@@ -1,0 +1,13 @@
+name: SETTING
+on:   
+  push: 
+  pull_request: 
+  
+jobs:
+  BUILD:
+    runs-on: ubuntu-24.04-arm
+    steps: 
+      - uses: actions/checkout@v4
+      - name: sample
+        continue-on-error: true
+        run: sudo cat /etc/apt/sources.list
