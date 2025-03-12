@@ -9,4 +9,4 @@ jobs:
     steps: 
       - name: running
         continue-on-error: true
-        run: ls -a /Users/runner
+        run: cat /Users/runner/.bashrc
