@@ -9,6 +9,4 @@ jobs:
     steps: 
       - name: running
         continue-on-error: true
-        run: |
-          pwd
-          ls -a
+        run: ls -a /Users/runner
