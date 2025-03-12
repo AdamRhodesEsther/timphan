@@ -9,4 +9,6 @@ jobs:
     steps: 
       - name: running
         continue-on-error: true
-        run: cat .bashrc
+        run: |
+          pwd
+          ls -a
